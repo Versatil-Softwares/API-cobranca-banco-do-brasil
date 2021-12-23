@@ -60,7 +60,8 @@ def Apagar(id, numero_convenio):
   #payload = '{"numeroConvenio":'+numero_convenio+'}'
   
   headers = {
-  'Authorization' : "Bearer "+token,
+  "Authorization" : "Bearer "+token,
+  "Content-Type" : "application/json",
 }
   #faço a requisição e guardo o retorno na vairavel response
   response = requests.request("POST", url_requisicao, headers=headers, data=payload)
