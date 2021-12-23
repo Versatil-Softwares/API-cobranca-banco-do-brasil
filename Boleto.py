@@ -30,6 +30,20 @@ def Autenticacao():
 
 token = Autenticacao()
 
+
+def criar(numeroConvenio, dataVencimento, valorOriginal, numeroCarteira, numeroVariacaoCarteira, codigoModalidade, dataEmissao, valorAbatimento, quantidadeDiasProtesto, quantidadeDiasNegativacao, orgaoNegativador, indicadorAceiteTituloVencido, numeroDiasLimiteRecebimento, codigoAceite, codigoTipoTitulo, descricaoTipoTitulo, indicadorPermissaoRecebimentoParcial, numeroTituloBeneficiario, campoUtilizacaoBeneficiario, numeroTituloCliente, mensagemBloquetoOcorrencia, tipodesconto, dataExpiracaodesconto, porcentagemdesconto, valordesconto, tipojurosmora,  porcentagemjurosmora, valorjurosmora, tipomulta, datamulta, porcentagemmulta, valormulta, tipoInscricaopagador, numeroInscricaopagador, nomepagador, enderecopagador, ceppagador, cidadepagador, bairropagador, ufpagador, telefonepagador, tipoInscricaobeneficiarioFinal, numeroInscricaobeneficiarioFinal, nomebeneficiarioFinal, indicadorPix):
+  url = url_base+"?gw-dev-app-key="+GW_DEV_APP_KEY
+
+  payload = "{\n    \"numeroConvenio\": {},\n    \"dataVencimento\": \"{}\",\n    \"valorOriginal\": {},\n    \"numeroCarteira\": {},\n    \"numeroVariacaoCarteira\": {},\n    \"codigoModalidade\": {},\n    \"dataEmissao\": \"{}\",\n    \"valorAbatimento\": {},\n    \"quantidadeDiasProtesto\": {},\n    \"quantidadeDiasNegativacao\": {},\n    \"orgaoNegativador\": {},\n    \"indicadorAceiteTituloVencido\": \"{}\",\n    \"numeroDiasLimiteRecebimento\": {},\n    \"codigoAceite\": \"{}\",\n    \"codigoTipoTitulo\": {},\n    \"descricaoTipoTitulo\": \"{}\",\n    \"indicadorPermissaoRecebimentoParcial\": \"{}\",\n    \"numeroTituloBeneficiario\": \"{}\",\n    \"campoUtilizacaoBeneficiario\": \"{}\",\n    \"numeroTituloCliente\": \"{}\",\n    \"mensagemBloquetoOcorrencia\": \"{}\",\n    \"desconto\": {\n        \"tipo\": {},\n        \"dataExpiracao\": \"{}\",\n        \"porcentagem\": {},\n        \"valor\": {}\n    },\n    \"segundoDesconto\": {\n        \"dataExpiracao\": \"sit\",\n        \"porcentagem\": 0,\n        \"valor\": 0\n    },\n    \"terceiroDesconto\": {\n        \"dataExpiracao\": \"est fugiat Ut ipsum\",\n        \"porcentagem\": 0,\n        \"valor\": 0\n    },\n    \"jurosMora\": {\n        \"tipo\": {},\n        \"porcentagem\": {},\n        \"valor\": {}\n    },\n    \"multa\": {\n        \"tipo\": {},\n        \"data\": \"{}\",\n        \"porcentagem\": {},\n        \"valor\": {}\n    },\n    \"pagador\": {\n        \"tipoInscricao\": {},\n        \"numeroInscricao\": {},\n        \"nome\": \"{}\",\n        \"endereco\": \"{}\",\n        \"cep\": {},\n        \"cidade\": \"{}\",\n        \"bairro\": \"{}\",\n        \"uf\": \"{}\",\n        \"telefone\": \"{}\"\n    },\n    \"beneficiarioFinal\": {\n        \"tipoInscricao\": {},\n        \"numeroInscricao\": {},\n        \"nome\": \"{}\"\n    },\n    \"indicadorPix\": \"{}\"\n}".format(numeroConvenio, dataVencimento, valorOriginal, numeroCarteira, numeroVariacaoCarteira, codigoModalidade, dataEmissao, valorAbatimento, quantidadeDiasProtesto, quantidadeDiasNegativacao, orgaoNegativador, indicadorAceiteTituloVencido, numeroDiasLimiteRecebimento, codigoAceite, codigoTipoTitulo, descricaoTipoTitulo, indicadorPermissaoRecebimentoParcial, numeroTituloBeneficiario, campoUtilizacaoBeneficiario, numeroTituloCliente, mensagemBloquetoOcorrencia, tipodesconto, dataExpiracaodesconto, porcentagemdesconto, valordesconto, tipojurosmora,  porcentagemjurosmora, valorjurosmora, tipomulta, datamulta, porcentagemmulta, valormulta, tipoInscricaopagador, numeroInscricaopagador, nomepagador, enderecopagador, ceppagador, cidadepagador, bairropagador, ufpagador, telefonepagador, tipoInscricaobeneficiarioFinal, numeroInscricaobeneficiarioFinal, nomebeneficiarioFinal, indicadorPix)
+  headers = {
+    'Authorization' : "Bearer "+token,
+  }
+
+  response = requests.request("POST", url, headers=headers, data=payload)
+
+  print(response.text)
+
+
 def Apagar(id, numero_convenio):
   #pego o retorno da função de autenticação
   
@@ -47,10 +61,6 @@ def Apagar(id, numero_convenio):
   #print("   ###   " + url_requisicao + "   ###   ")
   print(response.text)
 
-
-#Preparo o script para receber um argumento externo
-argumentos_externos = sys.argv
-
 def listar(situacao, agencia, conta):
   url = url_base+"?gw-dev-app-key="+GW_DEV_APP_KEY+"&indicadorSituacao="+situacao+"&agenciaBeneficiario="+agencia+"&contaBeneficiario="+conta
  
@@ -63,9 +73,16 @@ def listar(situacao, agencia, conta):
  
   print(response.text)
 
+
+#Preparo o script para receber um argumento externo
+argumentos_externos = sys.argv
+
+
 try:
   if argumentos_externos[1] == "baixar":
     Apagar(argumentos_externos[2], argumentos_externos[3])
+  elif argumentos_externos[1] == "listar":
+    Apagar(argumentos_externos[2], argumentos_externos[3], argumentos_externos[4], argumentos_externos[5], argumentos_externos[6], argumentos_externos[7], argumentos_externos[8], argumentos_externos[9], argumentos_externos[10], argumentos_externos[11], argumentos_externos[12], argumentos_externos[13], argumentos_externos[14], argumentos_externos[15], argumentos_externos[16], argumentos_externos[17], argumentos_externos[18], argumentos_externos[19], argumentos_externos[20], argumentos_externos[21], argumentos_externos[22], argumentos_externos[23], argumentos_externos[24], argumentos_externos[25], argumentos_externos[26], argumentos_externos[27], argumentos_externos[28], argumentos_externos[29], argumentos_externos[30], argumentos_externos[31], argumentos_externos[32], argumentos_externos[33], argumentos_externos[34], argumentos_externos[35], argumentos_externos[36], argumentos_externos[37], argumentos_externos[38], argumentos_externos[39], argumentos_externos[40], argumentos_externos[41], argumentos_externos[42], argumentos_externos[43], argumentos_externos[44], argumentos_externos[45], argumentos_externos[46] )
   elif argumentos_externos[1] == "listar":
     Apagar(argumentos_externos[2], argumentos_externos[3])
 except: 
