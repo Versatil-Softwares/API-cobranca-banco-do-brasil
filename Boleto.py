@@ -10,7 +10,8 @@ BASIC_CODE_TOKEN_APP_DEFAULT = config('BASIC_CODE_TOKEN_APP_DEFAULT')
 GW_DEV_APP_KEY = config('GW_DEV_APP_KEY')
 CLIENT_ID = config('CLIENT_ID')
 CLIENT_SECRET = config('CLIENT_SECRET')
-
+######################################################################################
+#Função que faz a autenticação no Banco do Brasil, ela envia o código Basic e retorna o token temporário
 def Autenticacao():
   headers = {
   'Authorization' : BASIC_CODE_TOKEN_APP_DEFAULT,
@@ -30,7 +31,8 @@ def Autenticacao():
 
 token = Autenticacao()
 
-
+######################################################################################
+#Função que cria um novo boleto
 def criar(numeroConvenio, dataVencimento, valorOriginal, numeroCarteira, numeroVariacaoCarteira, codigoModalidade, dataEmissao, valorAbatimento, quantidadeDiasProtesto, quantidadeDiasNegativacao, orgaoNegativador, indicadorAceiteTituloVencido, numeroDiasLimiteRecebimento, codigoAceite, codigoTipoTitulo, descricaoTipoTitulo, indicadorPermissaoRecebimentoParcial, numeroTituloBeneficiario, campoUtilizacaoBeneficiario, numeroTituloCliente, mensagemBloquetoOcorrencia, tipodesconto, dataExpiracaodesconto, porcentagemdesconto, valordesconto, tipojurosmora,  porcentagemjurosmora, valorjurosmora, tipomulta, datamulta, porcentagemmulta, valormulta, tipoInscricaopagador, numeroInscricaopagador, nomepagador, enderecopagador, ceppagador, cidadepagador, bairropagador, ufpagador, telefonepagador, tipoInscricaobeneficiarioFinal, numeroInscricaobeneficiarioFinal, nomebeneficiarioFinal, indicadorPix):
   url = url_base+"?gw-dev-app-key="+GW_DEV_APP_KEY
 
@@ -43,7 +45,8 @@ def criar(numeroConvenio, dataVencimento, valorOriginal, numeroCarteira, numeroV
 
   print(response.text)
 
-
+######################################################################################
+#Função que faz a requisição de baixa do boleto
 def Apagar(id, numero_convenio):
   #pego o retorno da função de autenticação
   
@@ -61,6 +64,9 @@ def Apagar(id, numero_convenio):
   #print("   ###   " + url_requisicao + "   ###   ")
   print(response.text)
 
+
+######################################################################################
+#Função de Listar os boletos que estão ligados a determinada conta, você deve informar se o boleto é A para em aberto ou B para fechado(baixado, pago), a agencia e a conta
 def listar(situacao, agencia, conta):
   url = url_base+"?gw-dev-app-key="+GW_DEV_APP_KEY+"&indicadorSituacao="+situacao+"&agenciaBeneficiario="+agencia+"&contaBeneficiario="+conta
  
@@ -74,14 +80,14 @@ def listar(situacao, agencia, conta):
   print(response.text)
 
 
-#Preparo o script para receber um argumento externo
+#Preparo o script para receber argumentos externos
 argumentos_externos = sys.argv
 
-
+#Chama as funções do script com os dados externos na chamada da função
 try:
   if argumentos_externos[1] == "baixar":
     Apagar(argumentos_externos[2], argumentos_externos[3])
-  elif argumentos_externos[1] == "listar":
+  elif argumentos_externos[1] == "gerar":
     Apagar(argumentos_externos[2], argumentos_externos[3], argumentos_externos[4], argumentos_externos[5], argumentos_externos[6], argumentos_externos[7], argumentos_externos[8], argumentos_externos[9], argumentos_externos[10], argumentos_externos[11], argumentos_externos[12], argumentos_externos[13], argumentos_externos[14], argumentos_externos[15], argumentos_externos[16], argumentos_externos[17], argumentos_externos[18], argumentos_externos[19], argumentos_externos[20], argumentos_externos[21], argumentos_externos[22], argumentos_externos[23], argumentos_externos[24], argumentos_externos[25], argumentos_externos[26], argumentos_externos[27], argumentos_externos[28], argumentos_externos[29], argumentos_externos[30], argumentos_externos[31], argumentos_externos[32], argumentos_externos[33], argumentos_externos[34], argumentos_externos[35], argumentos_externos[36], argumentos_externos[37], argumentos_externos[38], argumentos_externos[39], argumentos_externos[40], argumentos_externos[41], argumentos_externos[42], argumentos_externos[43], argumentos_externos[44], argumentos_externos[45], argumentos_externos[46] )
   elif argumentos_externos[1] == "listar":
     Apagar(argumentos_externos[2], argumentos_externos[3])
