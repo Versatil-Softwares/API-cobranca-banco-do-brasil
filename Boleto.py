@@ -39,14 +39,32 @@ token = Autenticacao()
 def Criar(numeroConvenio, dataVencimento, valorOriginal, numeroCarteira, numeroVariacaoCarteira, codigoModalidade, dataEmissao, valorAbatimento, quantidadeDiasProtesto, quantidadeDiasNegativacao, orgaoNegativador, indicadorAceiteTituloVencido, numeroDiasLimiteRecebimento, codigoAceite, codigoTipoTitulo, descricaoTipoTitulo, indicadorPermissaoRecebimentoParcial, numeroTituloBeneficiario, campoUtilizacaoBeneficiario, numeroTituloCliente, mensagemBloquetoOcorrencia, tipodesconto, dataExpiracaodesconto, porcentagemdesconto, valordesconto, tipojurosmora,  porcentagemjurosmora, valorjurosmora, tipomulta, datamulta, porcentagemmulta, valormulta, tipoInscricaopagador, numeroInscricaopagador, nomepagador, enderecopagador, ceppagador, cidadepagador, bairropagador, ufpagador, telefonepagador, tipoInscricaobeneficiarioFinal, numeroInscricaobeneficiarioFinal, nomebeneficiarioFinal, indicadorPix):
   url = url_base+"?gw-dev-app-key="+GW_DEV_APP_KEY
 
-  payload = "{\n    \"numeroConvenio\": {},\n    \"dataVencimento\": \"{}\",\n    \"valorOriginal\": {},\n    \"numeroCarteira\": {},\n    \"numeroVariacaoCarteira\": {},\n    \"codigoModalidade\": {},\n    \"dataEmissao\": \"{}\",\n    \"valorAbatimento\": {},\n    \"quantidadeDiasProtesto\": {},\n    \"quantidadeDiasNegativacao\": {},\n    \"orgaoNegativador\": {},\n    \"indicadorAceiteTituloVencido\": \"{}\",\n    \"numeroDiasLimiteRecebimento\": {},\n    \"codigoAceite\": \"{}\",\n    \"codigoTipoTitulo\": {},\n    \"descricaoTipoTitulo\": \"{}\",\n    \"indicadorPermissaoRecebimentoParcial\": \"{}\",\n    \"numeroTituloBeneficiario\": \"{}\",\n    \"campoUtilizacaoBeneficiario\": \"{}\",\n    \"numeroTituloCliente\": \"{}\",\n    \"mensagemBloquetoOcorrencia\": \"{}\",\n    \"desconto\": {\n        \"tipo\": {},\n        \"dataExpiracao\": \"{}\",\n        \"porcentagem\": {},\n        \"valor\": {}\n    },\n    \"segundoDesconto\": {\n        \"dataExpiracao\": \"sit\",\n        \"porcentagem\": 0,\n        \"valor\": 0\n    },\n    \"terceiroDesconto\": {\n        \"dataExpiracao\": \"est fugiat Ut ipsum\",\n        \"porcentagem\": 0,\n        \"valor\": 0\n    },\n    \"jurosMora\": {\n        \"tipo\": {},\n        \"porcentagem\": {},\n        \"valor\": {}\n    },\n    \"multa\": {\n        \"tipo\": {},\n        \"data\": \"{}\",\n        \"porcentagem\": {},\n        \"valor\": {}\n    },\n    \"pagador\": {\n        \"tipoInscricao\": {},\n        \"numeroInscricao\": {},\n        \"nome\": \"{}\",\n        \"endereco\": \"{}\",\n        \"cep\": {},\n        \"cidade\": \"{}\",\n        \"bairro\": \"{}\",\n        \"uf\": \"{}\",\n        \"telefone\": \"{}\"\n    },\n    \"beneficiarioFinal\": {\n        \"tipoInscricao\": {},\n        \"numeroInscricao\": {},\n        \"nome\": \"{}\"\n    },\n    \"indicadorPix\": \"{}\"\n}".format(numeroConvenio, dataVencimento, valorOriginal, numeroCarteira, numeroVariacaoCarteira, codigoModalidade, dataEmissao, valorAbatimento, quantidadeDiasProtesto, quantidadeDiasNegativacao, orgaoNegativador, indicadorAceiteTituloVencido, numeroDiasLimiteRecebimento, codigoAceite, codigoTipoTitulo, descricaoTipoTitulo, indicadorPermissaoRecebimentoParcial, numeroTituloBeneficiario, campoUtilizacaoBeneficiario, numeroTituloCliente, mensagemBloquetoOcorrencia, tipodesconto, dataExpiracaodesconto, porcentagemdesconto, valordesconto, tipojurosmora,  porcentagemjurosmora, valorjurosmora, tipomulta, datamulta, porcentagemmulta, valormulta, tipoInscricaopagador, numeroInscricaopagador, nomepagador, enderecopagador, ceppagador, cidadepagador, bairropagador, ufpagador, telefonepagador, tipoInscricaobeneficiarioFinal, numeroInscricaobeneficiarioFinal, nomebeneficiarioFinal, indicadorPix)
+  payload = "{\n    \"numeroConvenio\": {numeroConvenio},\n    \"dataVencimento\": \"{dataVencimento}\",\n    \"valorOriginal\": {valorOriginal},\n    \"numeroCarteira\": {},\n    \"numeroVariacaoCarteira\": {},\n    \"codigoModalidade\": {},\n    \"dataEmissao\": \"{}\",\n    \"valorAbatimento\": {},\n    \"quantidadeDiasProtesto\": {},\n    \"quantidadeDiasNegativacao\": {},\n    \"orgaoNegativador\": {},\n    \"indicadorAceiteTituloVencido\": \"{}\",\n    \"numeroDiasLimiteRecebimento\": {},\n    \"codigoAceite\": \"{}\",\n    \"codigoTipoTitulo\": {},\n    \"descricaoTipoTitulo\": \"{}\",\n    \"indicadorPermissaoRecebimentoParcial\": \"{}\",\n    \"numeroTituloBeneficiario\": \"{}\",\n    \"campoUtilizacaoBeneficiario\": \"{}\",\n    \"numeroTituloCliente\": \"{}\",\n    \"mensagemBloquetoOcorrencia\": \"{}\",\n    \"desconto\": {\n        \"tipo\": {},\n        \"dataExpiracao\": \"{}\",\n        \"porcentagem\": {},\n        \"valor\": {}\n    },\n    \"segundoDesconto\": {\n        \"dataExpiracao\": \"sit\",\n        \"porcentagem\": 0,\n        \"valor\": 0\n    },\n    \"terceiroDesconto\": {\n        \"dataExpiracao\": \"est fugiat Ut ipsum\",\n        \"porcentagem\": 0,\n        \"valor\": 0\n    },\n    \"jurosMora\": {\n        \"tipo\": {},\n        \"porcentagem\": {},\n        \"valor\": {}\n    },\n    \"multa\": {\n        \"tipo\": {},\n        \"data\": \"{}\",\n        \"porcentagem\": {},\n        \"valor\": {}\n    },\n    \"pagador\": {\n        \"tipoInscricao\": {},\n        \"numeroInscricao\": {},\n        \"nome\": \"{}\",\n        \"endereco\": \"{}\",\n        \"cep\": {},\n        \"cidade\": \"{}\",\n        \"bairro\": \"{}\",\n        \"uf\": \"{}\",\n        \"telefone\": \"{}\"\n    },\n    \"beneficiarioFinal\": {\n        \"tipoInscricao\": {},\n        \"numeroInscricao\": {},\n        \"nome\": \"{}\"\n    },\n    \"indicadorPix\": \"{}\"\n}".format(numeroConvenio, dataVencimento, valorOriginal, numeroCarteira, numeroVariacaoCarteira, codigoModalidade, dataEmissao, valorAbatimento, quantidadeDiasProtesto, quantidadeDiasNegativacao, orgaoNegativador, indicadorAceiteTituloVencido, numeroDiasLimiteRecebimento, codigoAceite, codigoTipoTitulo, descricaoTipoTitulo, indicadorPermissaoRecebimentoParcial, numeroTituloBeneficiario, campoUtilizacaoBeneficiario, numeroTituloCliente, mensagemBloquetoOcorrencia, tipodesconto, dataExpiracaodesconto, porcentagemdesconto, valordesconto, tipojurosmora,  porcentagemjurosmora, valorjurosmora, tipomulta, datamulta, porcentagemmulta, valormulta, tipoInscricaopagador, numeroInscricaopagador, nomepagador, enderecopagador, ceppagador, cidadepagador, bairropagador, ufpagador, telefonepagador, tipoInscricaobeneficiarioFinal, numeroInscricaobeneficiarioFinal, nomebeneficiarioFinal, indicadorPix)
   headers = {
     'Authorization' : "Bearer "+token,
+    "Content-Type" : "application/json",
   }
 
   response = requests.request("POST", url, headers=headers, data=payload)
 
   print("##############  "+url+"  ########################")
+  print(response.text)
+  return(response.text)
+
+######################################################################################
+#Função para editar dados do boleto já criado
+def Editar(id, numeroConvenio, mudarVencimento, novaDataVencimento):
+  url = url_base+"/"+id+"?gw-dev-app-key="+GW_DEV_APP_KEY
+
+ 
+  payload = "{\n    \"indicadorCancelarAbatimento\": \"N\",\n    \"indicadorAlterarDataDesconto\": \"N\",\n    \"indicadorAlterarDesconto\": \"N\",\n    \"indicadorAlterarEnderecoPagador\": \"N\",\n    \"indicadorAlterarPrazoBoletoVencido\": \"N\",\n    \"indicadorAlterarSeuNumero\": \"N\",\n    \"indicadorAtribuirDesconto\": \"N\",\n    \"indicadorCancelarProtesto\": \"N\",\n    \"indicadorCobrarJuros\": \"N\",\n    \"indicadorCobrarMulta\": \"N\",\n    \"indicadorDispensarJuros\": \"N\",\n    \"indicadorDispensarMulta\": \"N\",\n    \"indicadorIncluirAbatimento\": \"N\",\n    \"indicadorNegativar\": \"N\",\n    \"indicadorNovaDataVencimento\": \""+mudarVencimento+"\",\n    \"indicadorProtestar\": \"N\",\n    \"indicadorSustacaoProtesto\": \"N\",\n    \"numeroConvenio\": "+numeroConvenio+",\n    \"alteracaoData\": {\n        \"novaDataVencimento\": \""+novaDataVencimento+"\"\n    },\n    \"desconto\": {\n        \"tipoPrimeiroDesconto\": 0,\n        \"valorPrimeiroDesconto\": 0,\n        \"percentualPrimeiroDesconto\": 0,\n        \"dataPrimeiroDesconto\": \"0\",\n        \"tipoSegundoDesconto\": 0,\n        \"valorSegundoDesconto\": 0,\n        \"percentualSegundoDesconto\": 0,\n        \"dataSegundoDesconto\": \"0\",\n        \"tipoTerceiroDesconto\": 0,\n        \"valorTerceiroDesconto\": 0,\n        \"percentualTerceiroDesconto\": 0,\n        \"dataTerceiroDesconto\": \"0\"\n    },\n    \"alteracaoDesconto\": {\n        \"tipoPrimeiroDesconto\": 0,\n        \"novoValorPrimeiroDesconto\": 0,\n        \"novoPercentualPrimeiroDesconto\": 0,\n        \"novaDataLimitePrimeiroDesconto\": \"0\",\n        \"tipoSegundoDesconto\": 0,\n        \"novoValorSegundoDesconto\": 0,\n        \"novoPercentualSegundoDesconto\": 0,\n        \"novaDataLimiteSegundoDesconto\": \"0\",\n        \"tipoTerceiroDesconto\": 0,\n        \"novoValorTerceiroDesconto\": 0,\n        \"novoPercentualTerceiroDesconto\": 0,\n        \"novaDataLimiteTerceiroDesconto\": \"0\"\n    },\n    \"alteracaoDataDesconto\": {\n        \"novaDataLimitePrimeiroDesconto\": \"0\",\n        \"novaDataLimiteSegundoDesconto\": \"0\",\n        \"novaDataLimiteTerceiroDesconto\": \"0\"\n    },\n    \"protesto\": {\n        \"quantidadeDiasProtesto\": 0\n    },\n    \"abatimento\": {\n        \"valorAbatimento\": 0\n    },\n    \"alteracaoAbatimento\": {\n        \"novoValorAbatimento\": 0\n    },\n    \"juros\": {\n        \"tipoJuros\": 0,\n        \"valorJuros\": 0,\n        \"taxaJuros\": 0\n    },\n    \"multa\": {\n        \"tipoMulta\": 0,\n        \"valorMulta\": 0,\n        \"dataInicioMulta\": \"0\",\n        \"taxaMulta\": 0\n    },\n    \"negativacao\": {\n        \"quantidadeDiasNegativacao\": 0,\n        \"tipoNegativacao\": 0\n    },\n    \"alteracaoSeuNumero\": {\n        \"codigoSeuNumero\": \"0\"\n    },\n    \"alteracaoEndereco\": {\n        \"enderecoPagador\": \"lorem\",\n        \"bairroPagador\": \"lorem\",\n        \"cidadePagador\": \"lorem\",\n        \"UFPagador\": \"lorem\",\n        \"CEPPagador\": 0\n    },\n    \"alteracaoPrazo\": {\n        \"quantidadeDiasAceite\": 0\n    }\n}"
+  headers = {
+  "Authorization" : "Bearer "+token,
+  "Content-Type" : "application/json",
+  }
+  
+  response = requests.request("PATCH", url, headers=headers, data=payload)
+  
   print(response.text)
 
 ######################################################################################
@@ -69,7 +87,7 @@ def Apagar(id, numero_convenio):
   print(response.text)
   print(response.headers)
   print(response.url)
-  
+  return(response.text)
 
 
 ######################################################################################
@@ -80,11 +98,13 @@ def Listar(situacao, agencia, conta):
   payload={}
   headers = {
     'Authorization' : "Bearer "+token,
+    "Content-Type" : "application/json",
   }
  
   response = requests.get(url, headers=headers, data=payload)
   print("##############  "+url+"  ########################")
   print(response.text)
+  return(response.text)
 
 
 #Preparo o script para receber argumentos externos
@@ -98,4 +118,6 @@ elif argumentos_externos[1] == "gerar":
   Criar(argumentos_externos[2], argumentos_externos[3], argumentos_externos[4], argumentos_externos[5],argumentos_externos[6], argumentos_externos[7], argumentos_externos[8], argumentos_externos[9],argumentos_externos[10], argumentos_externos[11], argumentos_externos[12], argumentos_externos[13],argumentos_externos[14], argumentos_externos[15], argumentos_externos[16], argumentos_externos[17],argumentos_externos[18], argumentos_externos[19], argumentos_externos[20], argumentos_externos[21],argumentos_externos[22], argumentos_externos[23], argumentos_externos[24], argumentos_externos[25],argumentos_externos[26], argumentos_externos[27], argumentos_externos[28], argumentos_externos[29],argumentos_externos[30], argumentos_externos[31], argumentos_externos[32], argumentos_externos[33],argumentos_externos[34], argumentos_externos[35], argumentos_externos[36], argumentos_externos[37],argumentos_externos[38], argumentos_externos[39], argumentos_externos[40], argumentos_externos[41],argumentos_externos[42], argumentos_externos[43], argumentos_externos[44], argumentos_externos[45],argumentos_externos[46] )
 elif argumentos_externos[1] == "listar":
   Listar(argumentos_externos[2], argumentos_externos[3], argumentos_externos[4])
+elif argumentos_externos[1] == "editar":
+  Editar(argumentos_externos[2], argumentos_externos[3], argumentos_externos[4], argumentos_externos[5])
 
