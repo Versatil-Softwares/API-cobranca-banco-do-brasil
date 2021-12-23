@@ -21,12 +21,12 @@ Para instalar tudo automaticamente use
 
 Você precisará criar um arquivo .env e neste arquivo você colocará as informações da seguinte forma:
 
-`
-BASIC_CODE_TOKEN_APP_DEFAULT=lorem ipsun
-GW_DEV_APP_KEY=lorem ipsun
-CLIENT_ID=lorem ipsun
-CLIENT_SECRET=lorem ipsun
-`
+
+`BASIC_CODE_TOKEN_APP_DEFAULT=lorem ipsun`
+`GW_DEV_APP_KEY=lorem ipsun`
+`CLIENT_ID=lorem ipsun`
+`CLIENT_SECRET=lorem ipsun`
+
 
 Troque o lorem ipsun por as informações do site do sistema do Banco do Brasil, as informações não devem usar aspas e a primeira palavra deve estar colada com o = assim como no exemplo, sem espaço
 O script está em desenvolvimento e qualquer dica, pedido de modificação e etc eu responderei o mais rápido possível
