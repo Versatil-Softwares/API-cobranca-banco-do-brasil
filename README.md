@@ -31,5 +31,3 @@ CLIENT_SECRET=lorem ipsun
 
 Troque o lorem ipsun por as informações do site do sistema do Banco do Brasil, as informações não devem usar aspas e a primeira palavra deve estar colada com o = assim como no exemplo, sem espaço
 O script está em desenvolvimento e qualquer dica, pedido de modificação e etc eu responderei o mais rápido possível
-
-Neste momento estamos com erro 500 e aguardando retorno do Banco do Brasil
