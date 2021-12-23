@@ -10,6 +10,9 @@ BASIC_CODE_TOKEN_APP_DEFAULT = config('BASIC_CODE_TOKEN_APP_DEFAULT')
 GW_DEV_APP_KEY = config('GW_DEV_APP_KEY')
 CLIENT_ID = config('CLIENT_ID')
 CLIENT_SECRET = config('CLIENT_SECRET')
+
+
+
 ######################################################################################
 #Função que faz a autenticação no Banco do Brasil, ela envia o código Basic e retorna o token temporário
 def Autenticacao():
@@ -43,7 +46,7 @@ def Criar(numeroConvenio, dataVencimento, valorOriginal, numeroCarteira, numeroV
 
   response = requests.request("POST", url, headers=headers, data=payload)
 
-  print("##############"+url+"########################")
+  print("##############  "+url+"  ########################")
   print(response.text)
 
 ######################################################################################
@@ -62,8 +65,10 @@ def Apagar(id, numero_convenio):
   #faço a requisição e guardo o retorno na vairavel response
   response = requests.request("POST", url_requisicao, headers=headers, data=payload)
  
-  print("   ###   " + url_requisicao + "   ###   ")
   print(response.text)
+  print(response.headers)
+  print(response.url)
+  
 
 
 ######################################################################################
@@ -77,7 +82,7 @@ def Listar(situacao, agencia, conta):
   }
  
   response = requests.get(url, headers=headers, data=payload)
-  print("##############"+url+"########################")
+  print("##############  "+url+"  ########################")
   print(response.text)
 
 
