@@ -14,6 +14,11 @@ A biblioteca json estamos usando para tratar o retorno da Api do Bando do Brasil
 A biblioteca requests estamos usando para fazer as requisições para a Api do Banco do Brasil
 A biblioteca decouple estamaos usando para ter as informações sensíveis em um arquivo .env e assim não correr risco de enviar por engano para o repositório público.
 
+Todas as bibliotecas e versões estão em requirements.txt
+
+Para instalar tudo automaticamente use 
+´pip install -r requirements.txt´
+
 Você precisará criar um arquivo .env e neste arquivo você colocará as informações da seguinte forma:
 
 
