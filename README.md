@@ -17,7 +17,7 @@ A biblioteca decouple estamaos usando para ter as informações sensíveis em um
 Todas as bibliotecas e versões estão em requirements.txt
 
 Para instalar tudo automaticamente use 
-´pip install -r requirements.txt´
+`pip install -r requirements.txt`
 
 Você precisará criar um arquivo .env e neste arquivo você colocará as informações da seguinte forma:
 
