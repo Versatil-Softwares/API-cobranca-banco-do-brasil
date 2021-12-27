@@ -66,6 +66,7 @@ def Editar(id, numeroConvenio, mudarVencimento, novaDataVencimento):
   response = requests.request("PATCH", url, headers=headers, data=payload)
   
   print(response.text)
+  return(response.text)
 
 ######################################################################################
 #Função que faz a requisição de baixa do boleto
@@ -85,8 +86,6 @@ def Apagar(id, numero_convenio):
   response = requests.request("POST", url_requisicao, headers=headers, data=payload)
  
   print(response.text)
-  print(response.headers)
-  print(response.url)
   return(response.text)
 
 
@@ -102,7 +101,6 @@ def Listar(situacao, agencia, conta):
   }
  
   response = requests.get(url, headers=headers, data=payload)
-  print("##############  "+url+"  ########################")
   print(response.text)
   return(response.text)
 
