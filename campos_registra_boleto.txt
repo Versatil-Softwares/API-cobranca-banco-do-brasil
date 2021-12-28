@@ -1,0 +1,67 @@
+{
+    "numeroConvenio": -62750117,
+    "dataVencimento": "in deserunt",
+    "valorOriginal": -78202457.80828774,
+    "numeroCarteira": 97728895,
+    "numeroVariacaoCarteira": 47470066,
+    "codigoModalidade": 35651744,
+    "dataEmissao": "magna consectetur irure",
+    "valorAbatimento": -14015562.14825748,
+    "quantidadeDiasProtesto": -45682345.630114704,
+    "quantidadeDiasNegativacao": -85181364,
+    "orgaoNegativador": -72359764,
+    "indicadorAceiteTituloVencido": "cupidatat elit consectetur tempor",
+    "numeroDiasLimiteRecebimento": 2554584,
+    "codigoAceite": "magna nostrud consequat",
+    "codigoTipoTitulo": 10073112,
+    "descricaoTipoTitulo": "ex",
+    "indicadorPermissaoRecebimentoParcial": "dolore cillum",
+    "numeroTituloBeneficiario": "voluptate Excepteur",
+    "campoUtilizacaoBeneficiario": "nostrud Duis",
+    "numeroTituloCliente": "voluptate commodo",
+    "mensagemBloquetoOcorrencia": "velit Duis ex ut",
+    "desconto": {
+      "tipo": -12036438,
+      "dataExpiracao": "cillum elit dolore ullamco",
+      "porcentagem": -10548900.643598765,
+      "valor": -41438480.88110471
+    },
+    "segundoDesconto": {
+      "dataExpiracao": "sit",
+      "porcentagem": 61234133.94292542,
+      "valor": -70257504.31525193
+    },
+    "terceiroDesconto": {
+      "dataExpiracao": "est fugiat Ut ipsum",
+      "porcentagem": -52509703.26201583,
+      "valor": 48532773.34868142
+    },
+    "jurosMora": {
+      "tipo": -34062316,
+      "porcentagem": 92836720.855257,
+      "valor": 13588587.601559207
+    },
+    "multa": {
+      "tipo": -73019949,
+      "data": "dolore",
+      "porcentagem": -42793828.0540006,
+      "valor": 84167.96441169083
+    },
+    "pagador": {
+      "tipoInscricao": 77041246,
+      "numeroInscricao": -25918802,
+      "nome": "Excepteur quis dolore",
+      "endereco": "occaec",
+      "cep": -55859580,
+      "cidade": "in nostrud non con",
+      "bairro": "dolor proident Duis Ut minim",
+      "uf": "ut",
+      "telefone": "culpa"
+    },
+    "beneficiarioFinal": {
+      "tipoInscricao": 99015852,
+      "numeroInscricao": 55172028,
+      "nome": "aute veniam"
+    },
+    "indicadorPix": "consectetur"
+  }

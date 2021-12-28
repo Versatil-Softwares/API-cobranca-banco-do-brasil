@@ -1,6 +1,7 @@
 #!env/Scripts/python.exe
 
 import sys, json, requests
+from datetime import datetime
 from decouple import config #importa a biblioteca que puxa as informações do arquivo .env
 
 
@@ -10,7 +11,8 @@ BASIC_CODE_TOKEN_APP_DEFAULT = config('BASIC_CODE_TOKEN_APP_DEFAULT')
 GW_DEV_APP_KEY = config('GW_DEV_APP_KEY')
 CLIENT_ID = config('CLIENT_ID')
 CLIENT_SECRET = config('CLIENT_SECRET')
-
+data_e_hora_atuais = datetime.now()
+data_e_hora_em_texto = data_e_hora_atuais.strftime('%d.%m.%Y-%H:%M')
 
 
 ######################################################################################
@@ -35,6 +37,15 @@ def Autenticacao():
 token = Autenticacao()
 
 ######################################################################################
+# Função que transforma o retorno em arquivo de texto
+def Convert_Texto(text):
+  arquivo = ""
+  with open('arq01.txt', 'w') as arquivo:
+    arquivo.write(text)
+  with open('arq01.json', 'w') as arquivo:
+    arquivo.write(text)
+
+######################################################################################
 #Função que cria um novo boleto
 def Criar(numeroConvenio, dataVencimento, valorOriginal, numeroCarteira, numeroVariacaoCarteira, codigoModalidade, dataEmissao, valorAbatimento, quantidadeDiasProtesto, quantidadeDiasNegativacao, orgaoNegativador, indicadorAceiteTituloVencido, numeroDiasLimiteRecebimento, codigoAceite, codigoTipoTitulo, descricaoTipoTitulo, indicadorPermissaoRecebimentoParcial, numeroTituloBeneficiario, campoUtilizacaoBeneficiario, numeroTituloCliente, mensagemBloquetoOcorrencia, tipodesconto, dataExpiracaodesconto, porcentagemdesconto, valordesconto, tipojurosmora,  porcentagemjurosmora, valorjurosmora, tipomulta, datamulta, porcentagemmulta, valormulta, tipoInscricaopagador, numeroInscricaopagador, nomepagador, enderecopagador, ceppagador, cidadepagador, bairropagador, ufpagador, telefonepagador, tipoInscricaobeneficiarioFinal, numeroInscricaobeneficiarioFinal, nomebeneficiarioFinal, indicadorPix):
   url = url_base+"?gw-dev-app-key="+GW_DEV_APP_KEY
@@ -47,7 +58,8 @@ def Criar(numeroConvenio, dataVencimento, valorOriginal, numeroCarteira, numeroV
 
   response = requests.request("POST", url, headers=headers, data=payload)
 
-  print("##############  "+url+"  ########################")
+
+  Convert_Texto(response.text)
   print(response.text)
   return(response.text)
 
@@ -65,6 +77,7 @@ def Editar(id, numeroConvenio, mudarVencimento, novaDataVencimento):
   
   response = requests.request("PATCH", url, headers=headers, data=payload)
   
+  Convert_Texto(response.text)
   print(response.text)
   return(response.text)
 
@@ -85,6 +98,7 @@ def Apagar(id, numero_convenio):
   #faço a requisição e guardo o retorno na vairavel response
   response = requests.request("POST", url_requisicao, headers=headers, data=payload)
  
+  Convert_Texto(response.text)
   print(response.text)
   return(response.text)
 
@@ -101,6 +115,24 @@ def Listar(situacao, agencia, conta):
   }
  
   response = requests.get(url, headers=headers, data=payload)
+  Convert_Texto(response.text)
+  print(response.text)
+  return(response.text)
+
+
+######################################################################################
+#Função de Detalhar o Boleto, você deve informar o número do boleto e número do convênio
+def Detalhar(id, convenio):
+  url = url_base+"/"+id+"?gw-dev-app-key="+GW_DEV_APP_KEY+"&numeroConvenio="+convenio
+
+  payload={}
+  headers = {
+    'Authorization' : "Bearer "+token,
+    "Content-Type" : "application/json",
+  }
+ 
+  response = requests.get(url, headers=headers, data=payload)
+  Convert_Texto(response.text)
   print(response.text)
   return(response.text)
 
@@ -118,4 +150,6 @@ elif argumentos_externos[1] == "listar":
   Listar(argumentos_externos[2], argumentos_externos[3], argumentos_externos[4])
 elif argumentos_externos[1] == "editar":
   Editar(argumentos_externos[2], argumentos_externos[3], argumentos_externos[4], argumentos_externos[5])
+elif argumentos_externos[1] == "detalhar":
+  Detalhar(argumentos_externos[2], argumentos_externos[3])
 
